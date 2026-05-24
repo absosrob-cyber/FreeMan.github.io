@@ -1,0 +1,648 @@
+/* ===== طريق النقاء - ملف التصميم الأساسي ===== */
+
+/* ========== الأساسيات ========== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, 'Traditional Arabic', sans-serif;
+    background: #f4f6fb;
+    color: #1a1a2e;
+    line-height: 1.9;
+    font-size: 18px;
+    direction: rtl;
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* ========== الهيدر ========== */
+header {
+    background: linear-gradient(135deg, #0f3460 0%, #1a1a2e 50%, #16213e 100%);
+    color: white;
+    padding: 80px 20px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle at 20% 50%, rgba(233, 69, 96, 0.15), transparent 60%);
+}
+
+header h1 {
+    font-size: 3em;
+    margin-bottom: 15px;
+    position: relative;
+    z-index: 1;
+}
+
+header .subtitle {
+    font-size: 1.2em;
+    opacity: 0.92;
+    max-width: 700px;
+    margin: 0 auto 25px;
+    line-height: 1.7;
+    position: relative;
+    z-index: 1;
+}
+
+/* ========== الأزرار ========== */
+.btn {
+    display: inline-block;
+    background: #e94560;
+    color: white !important;
+    padding: 16px 40px;
+    border-radius: 50px;
+    font-size: 1.1em;
+    font-weight: bold;
+    transition: all 0.3s;
+    position: relative;
+    z-index: 1;
+    border: none;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background: #d63850;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(233, 69, 96, 0.4);
+}
+
+.btn-small {
+    display: block;
+    background: #0f3460;
+    color: white !important;
+    padding: 14px 25px;
+    border-radius: 12px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.05em;
+    transition: 0.3s;
+}
+
+.btn-small:hover {
+    background: #1a4a7a;
+    transform: scale(1.02);
+}
+
+/* ========== إحصائيات ========== */
+.stat-box {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 20px;
+    background: white;
+    border-radius: 18px;
+    padding: 30px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+    margin: -60px auto 0;
+    position: relative;
+    z-index: 2;
+}
+
+.stat-item {
+    text-align: center;
+    padding: 10px;
+}
+
+.stat-num {
+    display: block;
+    font-size: 2.2em;
+    font-weight: 900;
+    color: #e94560;
+    line-height: 1.2;
+}
+
+.stat-item p {
+    color: #555;
+    font-size: 0.95em;
+    margin-top: 5px;
+}
+
+/* ========== عناوين الأقسام ========== */
+.section-title {
+    font-size: 2em;
+    color: #0f3460;
+    margin-bottom: 10px;
+    border-right: 5px solid #e94560;
+    padding-right: 18px;
+}
+
+.section-desc {
+    color: #666;
+    margin-bottom: 30px;
+    font-size: 1.1em;
+}
+
+/* ========== أنظمة الشبكات (Grid) ========== */
+.grid-3 {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 22px;
+}
+
+.grid-2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 22px;
+}
+
+/* ========== البطاقات ========== */
+.card {
+    background: white;
+    padding: 28px;
+    border-radius: 16px;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.05);
+    border-right: 4px solid #e94560;
+    transition: all 0.3s;
+    display: block;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+}
+
+.card-icon {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+}
+
+.card h3 {
+    color: #0f3460;
+    font-size: 1.35em;
+    margin-bottom: 10px;
+}
+
+.card p {
+    color: #555;
+    font-size: 0.95em;
+    line-height: 1.7;
+}
+
+/* ========== شريط التحفيز ========== */
+.motivation-bar {
+    background: linear-gradient(135deg, #e94560, #0f3460);
+    color: white;
+    text-align: center;
+    padding: 50px 20px;
+    margin: 40px 0;
+}
+
+.motivation-bar h2 {
+    font-size: 2em;
+    margin-bottom: 15px;
+    border: none;
+    color: white;
+}
+
+.motivation-bar p {
+    max-width: 700px;
+    margin: 0 auto;
+    font-size: 1.1em;
+    opacity: 0.95;
+}
+
+/* ========== قصص النجاح ========== */
+.story-card {
+    background: white;
+    padding: 30px;
+    border-radius: 16px;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.05);
+    border-bottom: 4px solid #0f3460;
+}
+
+.story-text {
+    font-size: 1.05em;
+    color: #333;
+    font-style: italic;
+    margin-bottom: 12px;
+}
+
+.story-author {
+    color: #e94560;
+    font-weight: bold;
+    text-align: left;
+}
+
+/* ========== الروابط السريعة ========== */
+.quick-links {
+    margin-top: 20px;
+}
+
+.quick-links .grid-3 {
+    gap: 15px;
+}
+
+/* ========== المقالات (للصفحات الداخلية) ========== */
+.article {
+    background: white;
+    padding: 40px;
+    border-radius: 18px;
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.05);
+    margin-bottom: 30px;
+}
+
+.article h2 {
+    font-size: 1.8em;
+    color: #0f3460;
+    margin: 30px 0 15px;
+    border-right: 4px solid #e94560;
+    padding-right: 14px;
+}
+
+.article h3 {
+    font-size: 1.3em;
+    color: #16213e;
+    margin: 20px 0 10px;
+}
+
+.article p {
+    margin-bottom: 15px;
+    color: #333;
+}
+
+.article ul,
+.article ol {
+    padding-right: 25px;
+    margin: 15px 0;
+}
+
+.article li {
+    margin-bottom: 8px;
+}
+
+/* ========== صناديق التنبيه ========== */
+.highlight-box {
+    background: #fff8e1;
+    border-right: 5px solid #f5a623;
+    padding: 20px;
+    border-radius: 10px;
+    margin: 20px 0;
+}
+
+.tip-box {
+    background: #e8f4fd;
+    border-right: 5px solid #0f3460;
+    padding: 20px;
+    border-radius: 10px;
+    margin: 20px 0;
+}
+
+.warning-box {
+    background: #fde8e8;
+    border-right: 5px solid #e94560;
+    padding: 20px;
+    border-radius: 10px;
+    margin: 20px 0;
+}
+
+.success-box {
+    background: #e6f7e6;
+    border-right: 5px solid #28a745;
+    padding: 20px;
+    border-radius: 10px;
+    margin: 20px 0;
+}
+
+/* ========== الجدول الزمني للتعافي ========== */
+.timeline {
+    position: relative;
+    padding-right: 30px;
+    margin: 30px 0;
+}
+
+.timeline::before {
+    content: '';
+    position: absolute;
+    right: 8px;
+    top: 0;
+    bottom: 0;
+    width: 3px;
+    background: #e94560;
+}
+
+.timeline-item {
+    position: relative;
+    margin-bottom: 25px;
+    padding: 15px 25px;
+    background: #f8f9fa;
+    border-radius: 10px;
+    border-right: 3px solid #0f3460;
+}
+
+.timeline-item::before {
+    content: '';
+    position: absolute;
+    right: -26px;
+    top: 20px;
+    width: 14px;
+    height: 14px;
+    background: #e94560;
+    border-radius: 50%;
+    border: 3px solid #f4f6fb;
+}
+
+.timeline-item .day {
+    font-weight: bold;
+    color: #e94560;
+    font-size: 1.1em;
+}
+
+.timeline-item h4 {
+    color: #0f3460;
+    margin: 5px 0;
+}
+
+/* ========== قائمة التمارين ========== */
+.exercise-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 15px;
+    margin: 20px 0;
+}
+
+.exercise-card {
+    background: #f0f4f8;
+    padding: 20px;
+    border-radius: 12px;
+    text-align: center;
+}
+
+.exercise-card .ex-icon {
+    font-size: 2em;
+    margin-bottom: 8px;
+}
+
+.exercise-card h4 {
+    color: #0f3460;
+    margin-bottom: 5px;
+}
+
+/* ========== جدول الأكل ========== */
+.food-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.food-table th {
+    background: #0f3460;
+    color: white;
+    padding: 14px;
+    text-align: center;
+}
+
+.food-table td {
+    padding: 12px 14px;
+    border-bottom: 1px solid #eee;
+    text-align: center;
+}
+
+.food-table tr:nth-child(even) {
+    background: #f8f9fa;
+}
+
+.food-table tr:hover {
+    background: #e8f4fd;
+}
+
+/* ========== الفوتر ========== */
+footer {
+    background: #1a1a2e;
+    color: white;
+    text-align: center;
+    padding: 40px 20px;
+    margin-top: 50px;
+}
+
+footer p {
+    opacity: 0.85;
+    margin-bottom: 8px;
+}
+
+.footer-links {
+    margin-top: 15px;
+}
+
+.footer-links a {
+    color: #e94560;
+    margin: 0 10px;
+    transition: 0.3s;
+}
+
+.footer-links a:hover {
+    color: #ff6b81;
+    text-decoration: underline;
+}
+
+/* ========== صفحة الخطأ 404 ========== */
+.error-page {
+    text-align: center;
+    padding: 100px 20px;
+}
+
+.error-page h1 {
+    font-size: 6em;
+    color: #e94560;
+    margin-bottom: 10px;
+}
+
+.error-page p {
+    font-size: 1.3em;
+    color: #555;
+    margin-bottom: 30px;
+}
+
+/* ========== صفحة "عن الموقع" ========== */
+.about-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    margin: 30px 0;
+}
+
+.about-card {
+    background: #f0f4f8;
+    padding: 25px;
+    border-radius: 14px;
+    text-align: center;
+}
+
+.about-card .icon {
+    font-size: 3em;
+    margin-bottom: 12px;
+}
+
+.about-card h3 {
+    color: #0f3460;
+    margin-bottom: 8px;
+}
+
+/* ========== شريط التقدم (للعداد) ========== */
+.progress-bar {
+    background: #e0e0e0;
+    border-radius: 50px;
+    height: 25px;
+    overflow: hidden;
+    margin: 15px 0;
+}
+
+.progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #e94560, #0f3460);
+    border-radius: 50px;
+    transition: width 0.5s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 0.85em;
+    font-weight: bold;
+    min-width: 40px;
+}
+
+/* ========== تنسيقات الأدوات ========== */
+.tool-section {
+    background: white;
+    border-radius: 18px;
+    padding: 30px;
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.05);
+    margin-bottom: 25px;
+}
+
+.tool-section h3 {
+    color: #0f3460;
+    font-size: 1.4em;
+    margin-bottom: 15px;
+}
+
+input[type="text"],
+input[type="email"],
+textarea,
+select {
+    width: 100%;
+    padding: 12px 18px;
+    border: 2px solid #dde1e9;
+    border-radius: 10px;
+    font-size: 1em;
+    font-family: inherit;
+    margin-bottom: 15px;
+    transition: 0.3s;
+}
+
+input:focus,
+textarea:focus {
+    border-color: #0f3460;
+    outline: none;
+}
+
+textarea {
+    min-height: 120px;
+    resize: vertical;
+}
+
+/* ========== التوافق مع الجوال (Responsive) ========== */
+@media (max-width: 992px) {
+    .about-section {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    body {
+        font-size: 16px;
+    }
+
+    header {
+        padding: 50px 15px;
+    }
+
+    header h1 {
+        font-size: 2em;
+    }
+
+    header .subtitle {
+        font-size: 1em;
+    }
+
+    .stat-box {
+        grid-template-columns: 1fr 1fr;
+        margin: -40px 10px 0;
+        padding: 18px;
+    }
+
+    .stat-num {
+        font-size: 1.6em;
+    }
+
+    .grid-3,
+    .grid-2 {
+        grid-template-columns: 1fr;
+    }
+
+    .section-title {
+        font-size: 1.5em;
+    }
+
+    .article {
+        padding: 20px;
+    }
+
+    .exercise-list {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .food-table {
+        font-size: 0.9em;
+    }
+
+    .food-table th,
+    .food-table td {
+        padding: 8px;
+    }
+}
+
+@media (max-width: 480px) {
+    .stat-box {
+        grid-template-columns: 1fr;
+    }
+
+    .btn {
+        padding: 14px 28px;
+        font-size: 1em;
+    }
+
+    .exercise-list {
+        grid-template-columns: 1fr;
+    }
+
+    .error-page h1 {
+        font-size: 4em;
+    }
+}
